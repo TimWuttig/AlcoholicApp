@@ -6,32 +6,31 @@
     android:layout_height="match_parent"
     tools:context="tiwu.alcoholicapp.AddCounter">
 
-
-    <Button
-        android:id="@+id/addCounter"
+    <EditText
+        android:id="@+id/getName"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="Add Counter"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="87dp"
+        android:ems="10"
+        android:hint="What do you want to count?"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="italic" />
 
-    <ScrollView
+    <Button
+        android:id="@+id/enter"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="75dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/addCounter">
-
-        <LinearLayout
-            android:id="@+id/counters"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
+        android:layout_below="@+id/getName"
+        android:text="Add Counter"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 </RelativeLayout>
