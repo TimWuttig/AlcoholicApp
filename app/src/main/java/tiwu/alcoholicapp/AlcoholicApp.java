@@ -23,9 +23,17 @@ public class AlcoholicApp extends AppCompatActivity {
         management = new CounterUnit(this);
 
         AddCounter.main = management;
+        management.startUp();
 
         Button addCounter = (Button) findViewById(R.id.addCounter);
         addCounter.setOnClickListener(new AddCounterListener());
+    }
+
+    @Override
+    protected void onDestroy(){
+        management.shutdown();
+        super.onDestroy();
+
     }
 
     private class AddCounterListener implements View.OnClickListener{

@@ -36,6 +36,7 @@ class Counter {
         //set Listener and name
         represent = new Button(management.alcoholicApp);
         represent.setOnClickListener(new CounterListener(this));
+        represent.setOnLongClickListener(new CountPopupListener(this));
         represent.setText(name + "                     " + count);
         represent.setTextSize(24);
 
@@ -50,5 +51,12 @@ class Counter {
 
     public void increment(){
         count++;
+        management.setDirtyFlag(true);
+    }
+
+    public void delete() {
+        LinearLayout layout = (LinearLayout) management.alcoholicApp.findViewById(R.id.counters);
+        layout.removeView(represent);
+        management.deleteCounter(this);
     }
 }

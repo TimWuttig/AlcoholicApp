@@ -2,6 +2,8 @@ package tiwu.alcoholicapp;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+
 import static org.junit.Assert.*;
 
 /**
@@ -11,7 +13,13 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void test_safer() throws Exception {
+        Safer safer= new Safer(new AlcoholicApp());
+        HashMap<String,Integer> map = new HashMap<String, Integer>();
+        map.put("Bier",5);
+        map.put("Wasser",3);
+        map.put("BC",0);
+        safer.safe(map);
+        assertEquals(map, safer.restore());
     }
 }
